@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap 实例</title>
+  <title>车站选项</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 <body>
 
 <div class="container">
-  <h2>手风琴实例</h2>
+  <h2>按照线路选择车站</h2>
   <p><strong>注意:</strong> 使用 <strong>data-parent</strong> 属性来确保所有的折叠元素在指定的父元素下，这样就能实现在一个折叠选项显示时其他选项就隐藏。</p>
   <div id="accordion">
     <div class="card">
@@ -20,10 +20,42 @@
         <a class="card-link" data-toggle="collapse" href="#collapseOne">
           山手线
         </a>
+        <label style="float: right;"><input type="checkbox" name="prefB" value="ALL">全部(全选Function未绑定)</label>
       </div>
-      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div id="collapseOne" class="collapse" data-parent="#accordion">
         <div class="card-body">
-          #1 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+          <div class="row ml-1">
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">大崎</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="五反田">五反田</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="目黒">目黒</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="恵比寿">恵比寿</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="渋谷">渋谷</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="原宿">原宿</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="代々木">代々木</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新宿">新宿</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新大久保">新大久保</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="高田馬場">高田馬場</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="目白">目白</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="池袋">池袋</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大塚">大塚</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="巣鴨">巣鴨</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="駒込">駒込</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="田端">田端</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="西日暮里">西日暮里</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="日暮里">日暮里</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鶯谷">鶯谷</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="上野">上野</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="御徒町">御徒町</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="秋葉原">秋葉原</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="神田">神田</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東京">東京</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="有楽町">有楽町</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新橋">新橋</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="浜松町">浜松町</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="田町">田町</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="高輪ゲートウェイ">高輪ゲートウェイ</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="品川">品川</label></div>
+            </div>
         </div>
       </div>
     </div>
@@ -35,7 +67,26 @@
       </div>
       <div id="collapseTwo" class="collapse" data-parent="#accordion">
         <div class="card-body">
-          #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+          <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東神奈川">東神奈川</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大口">大口</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="菊名">菊名</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新横浜">新横浜</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="小机">小机</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鴨居">鴨居</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="中山">中山</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="十日市場">十日市場</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="長津田">長津田</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="成瀬">成瀬</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="町田">町田</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="古淵">古淵</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="淵野辺">淵野辺</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="矢部">矢部</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相模原">相模原</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="橋本">橋本</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相原">相原</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子みなみ野">八王子みなみ野</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="片倉">片倉</label></div>
+        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子">八王子</label></div>
         </div>
       </div>
     </div>
@@ -47,7 +98,7 @@
       </div>
       <div id="collapseThree" class="collapse" data-parent="#accordion">
         <div class="card-body">
-          #3 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+          未补充
         </div>
       </div>
     </div>
