@@ -15,7 +15,7 @@
   <h2>按照线路选择车站</h2>
   <p><strong>注意:</strong> 使用 <strong>data-parent</strong> 属性来确保所有的折叠元素在指定的父元素下，这样就能实现在一个折叠选项显示时其他选项就隐藏。</p>
   <div id="accordion">
-    <div class="card">
+    <div class="card" style="background: aquamarine;">
       <div class="card-header">
         <a class="card-link" data-toggle="collapse" href="#collapseOne">
           山手线
@@ -59,11 +59,12 @@
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card" style="background: deepskyblue;">
       <div class="card-header">
-        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo" style="color: aliceblue;">
         京滨东北线
       </a>
+      <label style="float: right;"><input type="checkbox" name="prefB" value="ALL">全部(全选Function未绑定)</label>
       </div>
       <div id="collapseTwo" class="collapse" data-parent="#accordion">
         <div class="card-body">
