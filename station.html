@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>车站选项</title>
   <meta charset="utf-8">
@@ -8,23 +9,166 @@
   <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    .station-block{
+      overflow: auto;
+      overflow-x: hidden;
+      height: 500px;
+      border: 1px solid #2b83e8;
+      width: 400px;
+      position: absolute;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h2>按照线路选择车站</h2>
-  <p><strong>注意:</strong> 使用 <strong>data-parent</strong> 属性来确保所有的折叠元素在指定的父元素下，这样就能实现在一个折叠选项显示时其他选项就隐藏。</p>
-  <div id="accordion">
-    <div class="card" style="background: aquamarine;">
-      <div class="card-header">
-        <a class="card-link" data-toggle="collapse" href="#collapseOne">
-          山手线
-        </a>
-        <label style="float: right;"><input type="checkbox" name="prefB" value="ALL">全部(全选Function未绑定)</label>
+  <div class="container">
+    <h2>按照线路选择车站</h2>
+    <p><strong>注意:</strong> 使用 <strong>data-parent</strong> 属性来确保所有的折叠元素在指定的父元素下，这样就能实现在一个折叠选项显示时其他选项就隐藏。</p>
+    <div id="accordion">
+      <div class="card" style="background: aquamarine;">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseOne">
+            山手线
+          </a>
+          <label style="float: right;"><input type="checkbox" name="prefB" value="ALL">全部(全选Function未绑定)</label>
+        </div>
+        <div id="collapseOne" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            <div class="row ml-1">
+
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">大崎</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="五反田">五反田</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="目黒">目黒</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="恵比寿">恵比寿</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="渋谷">渋谷</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="原宿">原宿</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="代々木">代々木</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新宿">新宿</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新大久保">新大久保</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="高田馬場">高田馬場</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="目白">目白</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="池袋">池袋</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大塚">大塚</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="巣鴨">巣鴨</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="駒込">駒込</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="田端">田端</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="西日暮里">西日暮里</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="日暮里">日暮里</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鶯谷">鶯谷</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="上野">上野</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="御徒町">御徒町</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="秋葉原">秋葉原</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="神田">神田</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東京">東京</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="有楽町">有楽町</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新橋">新橋</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="浜松町">浜松町</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="田町">田町</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="高輪ゲートウェイ">高輪ゲートウェイ</label></div>
+              <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="品川">品川</label></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="collapseOne" class="collapse" data-parent="#accordion">
-        <div class="card-body">
+      <div class="card" style="background: deepskyblue;">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo" style="color: aliceblue;">
+            京滨东北线
+          </a>
+          <label style="float: right;"><input type="checkbox" name="prefB" value="ALL">全部(全选Function未绑定)</label>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東神奈川">東神奈川</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大口">大口</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="菊名">菊名</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新横浜">新横浜</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="小机">小机</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鴨居">鴨居</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="中山">中山</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="十日市場">十日市場</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="長津田">長津田</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="成瀬">成瀬</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="町田">町田</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="古淵">古淵</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="淵野辺">淵野辺</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="矢部">矢部</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相模原">相模原</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="橋本">橋本</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相原">相原</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子みなみ野">八王子みなみ野</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="片倉">片倉</label></div>
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子">八王子</label></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+            东西线
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            未补充
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+</div>
+<div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+</div> -->
+
+
+
+<p>******************分割线**************</p>
+<br>
+
+
+
+
+  <div class="row">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"> 
+          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+          aria-controls="v-pills-home" aria-selected="true">山手线
+        </a> 
+          <a class="nav-link" id="v-pills-profile-tab"
+          data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+          aria-selected="false">京滨东北线
+        </a> 
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
+          href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages
+        </a> 
+          <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+          aria-controls="v-pills-settings" aria-selected="false">Settings
+        </a> 
+        </div>
+    </div>
+
+
+    <div class="col-9">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div class="station-block">
           <div class="row ml-1">
+            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">全选（功能暂未绑定）</label></div>
             <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">大崎</label></div>
             <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="五反田">五反田</label></div>
             <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="目黒">目黒</label></div>
@@ -55,56 +199,66 @@
             <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="田町">田町</label></div>
             <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="高輪ゲートウェイ">高輪ゲートウェイ</label></div>
             <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="品川">品川</label></div>
-            </div>
+          </div>
         </div>
+
+
       </div>
-    </div>
-    <div class="card" style="background: deepskyblue;">
-      <div class="card-header">
-        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo" style="color: aliceblue;">
-        京滨东北线
-      </a>
-      <label style="float: right;"><input type="checkbox" name="prefB" value="ALL">全部(全选Function未绑定)</label>
-      </div>
-      <div id="collapseTwo" class="collapse" data-parent="#accordion">
-        <div class="card-body">
-          <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東神奈川">東神奈川</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大口">大口</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="菊名">菊名</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新横浜">新横浜</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="小机">小机</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鴨居">鴨居</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="中山">中山</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="十日市場">十日市場</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="長津田">長津田</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="成瀬">成瀬</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="町田">町田</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="古淵">古淵</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="淵野辺">淵野辺</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="矢部">矢部</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相模原">相模原</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="橋本">橋本</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相原">相原</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子みなみ野">八王子みなみ野</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="片倉">片倉</label></div>
-        <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子">八王子</label></div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="station-block">
+                <div class="row ml-1">
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">全选（功能暂未绑定）</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東神奈川">東神奈川</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大口">大口</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="菊名">菊名</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新横浜">新横浜</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="小机">小机</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鴨居">鴨居</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="中山">中山</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="十日市場">十日市場</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="長津田">長津田</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="成瀬">成瀬</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="町田">町田</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="古淵">古淵</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="淵野辺">淵野辺</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="矢部">矢部</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相模原">相模原</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="橋本">橋本</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相原">相原</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子みなみ野">八王子みなみ野</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="片倉">片倉</label></div>
+                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子">八王子</label></div>
+                </div>
+              </div>
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-          东西线
-        </a>
-      </div>
-      <div id="collapseThree" class="collapse" data-parent="#accordion">
-        <div class="card-body">
-          未补充
+
+
+
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <p>Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident laboris
+            ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et et
+            proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna commodo est ea
+            veniam consectetur.</p>
+        </div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <p>Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor proident
+            in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui mollit
+            consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit adipisicing
+            labore officia magna elit nisi in aute tempor commodo eiusmod.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
-    
+
+
+
+
+
+
+  </div>
 </body>
+
 </html>
