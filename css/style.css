@@ -12,6 +12,9 @@
     border-color: transparent;
   }
 
+  p>button{
+      margin: 0.5%;
+  }
   /* button[aria-controls="collapseExample"]{
     background-color: yellowgreen;
     color: white;
