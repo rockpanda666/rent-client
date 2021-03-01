@@ -8,7 +8,11 @@
     z-index: 9999;
   }
 
-  .collapse{
-      margin-right: 2%;
-      margin-left: 2%;
+  .collapse,div.card{
+    border-color: transparent;
   }
+
+  /* button[aria-controls="collapseExample"]{
+    background-color: yellowgreen;
+    color: white;
+  } */
