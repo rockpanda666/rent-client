@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <html>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script>
 
 <head>
   <title>车站选项</title>
@@ -9,14 +10,56 @@
   <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <style>
-    .station-block{
-      overflow: auto;
-      height: 500px;
-      border: 1px solid #2b83e8;
-      width: 400px;
-      position: relative;
-      z-index: 9999;
+  <script src="./scr/script.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style type="text/css">
+    .container,
+    .card-header,
+    .col-lg-2,
+    .container.cc_cursor,
+    .col-3,
+    .col-9,
+    .card,
+    .cc_cursor,
+    body,
+    .ogdlpmhglpejoiomcodnpjnfgcpmgale_default,
+    body,
+    html,
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input::-webkit-contacts-auto-fill-button,
+    input:read-only {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFWklEQVRYR+1XXUyTZxR+Pr7+/1IsWgtooFKghGiUGDBKIYtD5sWymLi5hRiQkCUmhux+yS52sezKqcvcLhgzu5gxMV4scRdTnMY4suEcTdWiggO0La1UBfvf71vOKWXYTShsZje+yZfSfC/vec5znvOctwKyKwZAA+AxgAEAnwG4P//upX4IAEL9X5+2nvziGMrKK1BsNsHrHUEoFMT4+DgF/wHAJwB+ehlICIA8OhqELEu4e9cHUQTWri2BQiEik0mhv78f9+6NYWLiD9y86YUkSTfmAZ3+LwARgMGent7WaDSKRCKOvr4PoNPp+GxBEJBK0V8iNmxYh/Pnv8fZs+eQTqcwNnYP4+NjSKVSAQAfAfhyNYAIwOHu7p4Tc3NzMJlMqK2tg9vthiwDsRgoAD+SlGZGiJn6+hoMDV3DwMA3UCoVkGUZU1OTuH59mDRkWQkQAmDdvfv1UHGxBUqlEmvWrMH+/Z2IxyXEYsRKDMlkAoIAqFRKlJauxeTkfYiiiKIiAS5XLaYm7+P4ic+h1+tx5gxXhs4taPHGysoqubl5B1NPIPbuPYB4/BkH1+m0zAxlGYmEEQ6HkE6nQYCzIIr4sViK0d7exkElSXq/0JLkkMpdXYc4eDKZxLZtTdi+fRsEQV5IZnDwcu5wWCwlyGTSKCoSGRwBaG5uhNNZDZvNjomJ8TkAxkIoyAG41tPT20Q6yEgS6l0utLe3swjj8QQuXBhkIPSdyqDXG5l+s7kY9D+SlMHs7COcPPkVs+P3Pyi4DDkAb3Z0vHGurKwcM5EISiwWdHV1wecbhc93h+ufA0AgKGODwcjZq1QqKBRK9PYeRCaTgUqlJu2Qd3SshAE4HA65re01RB4/hk6rg91uRzJJPZjNnEBkPwmNAK1Wy4GtVis0Gg2czkp0dOzB7OwsxdUCiK8IgCiKrIPgdBD29XaIonIh4F+BsyBIKzqdHgqFgnVApSAB2+2l2LfvLUSj0dZCnXNxu9zq7DxY+2jmEcrLyhEOh2G1lqKmpg6jo74FFnKMrFtng1Kp4tYjQVIpNBodTCYtjhw5gkDgIc2UruVYWAzg7XcOvPsd0Z9IJPD06VNUVzsRiUQWXDHHRK4MVA2nsw5qtYbZSKUSDCKRmMWxY8dx546PXHL9UiCeM4xqp1N2t7Ti4cMHnD31ObXl4to/DyJbErPZjE2balicgpD1haGhqxga+hm3bvH8eKExPfcipwPy+KoqB09DckZSNzFCD3UKtWI+KGrLxsZmbk8C0Nd3mOYcqqtr4PV6LgHIulTeykfGfkAAKiureNiMjHjYkulQo9GEujoXDAYD1GrV3w8TBDQ17YTf78fRo5/yDJl3xhcaUz4Ad2fnwUuUMal6ejqIK1euIB6Pc8Zkvy5XPduywaDn9stfgUAAw8O/Ih6PEfU5AB8D+LAQBoh6edeuFg5CGjh1aoDVTveFjRuroFareRwTIw6Hg/0gt6hbpqamEInMLA6+pCv+kzh+6e7uaaROCAaDuHjxx4WB09CwmcsQDAY4AHlBRUUFgkE/PJ4R6HQGbkuinspGQJabjC9SZ8jtbrX6fD4ORvQTI5T1jh07+a5Al5dMRuKAV69ehtFo5lE9MxPGs2c0SdkIlx3LS23YDOAEgHIApGIyFZvFUuLfsmUrQqFp2Gzr8eTJE3g8N7g8WX8Abt/2FhS84E154nmvoWHzt+SEJE4qFV3nKDi16cQEX2SXzTx3ZsEb80Ccb2lp20P2G43GeCRTiTye31YUfMWb80D4t25ttCmVagbg9f6+qvNWy0AOC+nj0LxGVvW74d8CWGrOFPTuFYBXDPzvDPwJX8chPwXY5R0AAAAASUVORK5CYII=") 1 1, auto !important;
+    }
+
+    .card-link,
+    .card-link.cc_pointer,
+    .collapsed.card-link,
+    .collapsed.card-link.cc_pointer,
+    .nav-link,
+    .nav-link.cc_pointer,
+    .nav-link.active,
+    .cc_pointer,
+    [type="search"]::-webkit-search-cancel-button,
+    [type="search"]::-webkit-search-decoration,
+    .paper-button,
+    .ytp-progress-bar-container,
+    input[type=submit],
+    :link,
+    :visited,
+    a>*,
+    img,
+    button,
+    ::-webkit-scrollbar-button,
+    .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer,
+    ::-webkit-file-upload-button,
+    button,
+    .ytp-volume-panel,
+    #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFXklEQVRYR+2WW0yTZxjH//34wNLalkPbUMrJltEKasEqYAfVmkmIQcMiRoe6VF3mnJrNRBOXaCDxYnilZhc6Y6ZxTkQDGBXGssV5sSkYNcRF5imuaAflVFRaeqJ0eV7RaWalOOJu9t20X97ne5/fc/g/7ytA+EcH4NbY8hkA77/G9o2XBGG+lGu1WX0lJYshFotx+9YtnDtfT6bh7Ccd4Pv8/MJSk2kBPB43SkuXoq3tEmpqqlYD+O6Nvb3iw3AR/azT6RdERUVh+fIViI6ORkZGBlav/uAnAIveBsCPOp3+PZFIjIKCQuj1OsTFxcNqXeMCIHkbAEd0Or1VqUxCTk4OjMbZ4LgorF9vnfQ+CFeCI7Nm5VplsjgGkJdnRG9vD3bt+uLtARQWmqwCgQAGQy6ys2fAZvsDDQ2nYLPZJlUJYTNQXLzAGgj4kZubB43mHTgcXbh+/QouXrx4FEA7gP2T0QuvBBAKhUfmzi2wjowEYTAYkJiogMczjHv3boPnRfB6PWhpOYvR0VH6PglAP4CRNwEKl4Eqs9lS/TQDs5kMeZ6HzXYfBw8eQCgUwt69+7Bnz5dsRvT2OnDtWpsdQOpEIcIClJQsrqaNTaYi0DwgiOFhF+bPt8Bm64TZXIQtWzZhx46dbP3EiW9RX396pKjIwnd0/Aans78QQNt4QGEBFi5cVN3X14v8/ALQPCAAgyGPNWMoBPZ++fIvsFgWseyo1SrcvHkDev1MNDbW4eTJ2ogU8wxgFYDjY7TlAPTZ2Tk1wWCQSVChUCI1NR2PHz8CKYPno5+Xhf4TwLMSZWVNR0vLedTX10UMYJBKZe1zjAV4+PAB4hMScOXKJcjlCiQmJmLmzFnIyNCwuv/t+J8AsbGxDCIYHEVz8zk0Np6KGOChKjklRavJRFKSCjU1XyEmJgaVlUvQ2vorysqWIi0tg20eHR0zFvnLABKJhPWBSCSCy+VGY+NpNDefjRggtHLlh+jt64FSoQRNv4qKctTVnWJR+3w+xMcnMMcEMG2aBg6Hg71LpTL4/X5otVqSJAPv7nbgwoUfUFvLKjru0CKD3RzH7YyNFTGt0yYVFcuhVKrw5MnjlyInAJqMd+7cYfcE6o2hoSEGk56ezn4djh5s3LgOQ0NPIgZAVBQf4jhiESAYfDpPNmz4FDJZPB49cj5PvVyuRFpaGjo7O5GcnAxKPUHY7Xao1WoEAgH4/QFs374VHR03IgcAsJfn+c8ppV6vl026efPehdlsweDgwHOAZctWYHQ0yKRIxzOlnaDFYhGEQiGGhz2gQLZt24r29qutAOZNZA6EqP5i8VRWCpLc2rUfgUpD0luypBwSiZQ57e/vg0wmY067urqgUqmYH7/fh2PHjuL48aPUOxHdnl5skjiO4wYzM3Vwu12s9kqlEkbjHJSVlUOhULBoBwb6IZfLmUOXy4WeHge02kz2vnt3FZqa2BkRUfpfZVSVkpJWTYdPd7edXUKo2TZv/gxFRWYGQNkQjGF7vT4IhVNw5kwDDh/+GnR2OJ0DBECnZd546Q9H2Wc0FshJ1/fv32O1po3t9geYPn0GSksXo7JyDctSV9ef2LTpY9Dl9e7d35m9z+eNOPrXGApCJlMxBAKONSVJk5pRoUiCz+fB1autLDNutxsxMVOwatU61qiHDu2n6PUAbkcS/XikgeJiC086T0iQM407nf2geyIBkBqmTpXCYDAiOTkVtbXfYHDQOQPAzUidjwdA6wckEuknGk0W1OoUcBzHFEKOm5oaWLPRtAyFQg4AT6UwwWfcUTm2H52WNQBSXtifJtY+ANsn6PMl80gB/o2P1377P8B/noG/AEUg4jAYlFDpAAAAAElFTkSuQmCC") 8 1, auto !important;
     }
   </style>
 </head>
@@ -136,129 +179,11 @@
 </div> -->
 
 
-
-<p>******************分割线**************</p>
-<br>
+  <p>*****************分割线 3/1**********************</p>
 
 
 
 
-  <div class="row">
-    <div class="col-3">
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"> 
-          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-          aria-controls="v-pills-home" aria-selected="true">山手线
-        </a> 
-          <a class="nav-link" id="v-pills-profile-tab"
-          data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-          aria-selected="false">京滨东北线
-        </a> 
-          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
-          href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages
-        </a> 
-          <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-          aria-controls="v-pills-settings" aria-selected="false">Settings
-        </a> 
-        </div>
-    </div>
-
-
-    <div class="col-9">
-      <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <div class="station-block">
-          <div class="row ml-1">
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">全选（功能暂未绑定）</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">大崎</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="五反田">五反田</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="目黒">目黒</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="恵比寿">恵比寿</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="渋谷">渋谷</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="原宿">原宿</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="代々木">代々木</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新宿">新宿</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新大久保">新大久保</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="高田馬場">高田馬場</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="目白">目白</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="池袋">池袋</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大塚">大塚</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="巣鴨">巣鴨</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="駒込">駒込</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="田端">田端</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="西日暮里">西日暮里</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="日暮里">日暮里</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鶯谷">鶯谷</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="上野">上野</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="御徒町">御徒町</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="秋葉原">秋葉原</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="神田">神田</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東京">東京</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="有楽町">有楽町</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新橋">新橋</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="浜松町">浜松町</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="田町">田町</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="高輪ゲートウェイ">高輪ゲートウェイ</label></div>
-            <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="品川">品川</label></div>
-          </div>
-        </div>
-
-
-      </div>
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-          <div class="col-9">
-            <div class="tab-content" id="v-pills-tabContent">
-              <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div class="station-block">
-                <div class="row ml-1">
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大崎">全选（功能暂未绑定）</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="東神奈川">東神奈川</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="大口">大口</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="菊名">菊名</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="新横浜">新横浜</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="小机">小机</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="鴨居">鴨居</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="中山">中山</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="十日市場">十日市場</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="長津田">長津田</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="成瀬">成瀬</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="町田">町田</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="古淵">古淵</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="淵野辺">淵野辺</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="矢部">矢部</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相模原">相模原</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="橋本">橋本</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="相原">相原</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子みなみ野">八王子みなみ野</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="片倉">片倉</label></div>
-                  <div class="col-lg-2"><label><input type="checkbox" name="prefB" value="八王子">八王子</label></div>
-                </div>
-              </div>
-        </div>
-
-
-
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-          <p>Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident laboris
-            ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et et
-            proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna commodo est ea
-            veniam consectetur.</p>
-        </div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-          <p>Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor proident
-            in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui mollit
-            consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit adipisicing
-            labore officia magna elit nisi in aute tempor commodo eiusmod.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-  </div>
 </body>
 
 </html>
