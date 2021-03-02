@@ -43,7 +43,11 @@
         background-position: 10% 50%
     }
 
-    to {
+    to {  
         background-position: 58% 50%
     }
+  }
+
+  body{
+    background-color: currentColor
   }
