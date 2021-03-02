@@ -19,3 +19,31 @@
     background-color: yellowgreen;
     color: white;
   } */
+ 
+  .cyber {
+    background: linear-gradient(269.16deg, #FFE580 -15.83%, #FF7571 -4.97%, #FF7270 15.69%, #EA5DAD 32.43%, #C2A0FD 50.09%, #9867F0 67.47%, #3BF0E4 84.13%, #33CE43 105.13%, #B2F4B6 123.24%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: fantasy;
+    background-position: 58% 50%;
+    background-size: 500%;
+    animation: gradient-shift 6s ease infinite;
+}
+  @keyframes gradient-shift {
+    0% {
+        background-position: 58% 50%
+    }
+
+    25% {
+        background-position: 100% 0%
+    }
+
+    75% {
+        background-position: 10% 50%
+    }
+
+    to {
+        background-position: 58% 50%
+    }
+  }
