@@ -12,7 +12,7 @@
     border-color: transparent;
   }
 
-  p>button{
+  div>button{
       margin: 0.5%;
   }
   /* button[aria-controls="collapseExample"]{
@@ -54,4 +54,18 @@
 
   h2.cyber{
     margin-top: 1rem;
+  }
+
+  p{
+    color: #B2F4B6;
+    text-align: center;
+  }
+
+  label{
+    color: #C2A0FD;
+  }
+  div.preflist{
+    height: 50rem;
+    overflow-y: scroll;
+    overflow-x: hidden  ;
   }
