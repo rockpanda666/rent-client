@@ -100,6 +100,7 @@
 
   div.preflist-plan-c>.mainCheck{
     font-size: larger;
+    font-style: italic;
     color: rgb(235, 110, 38);
     font-weight: 600;
   }
