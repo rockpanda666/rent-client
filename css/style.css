@@ -48,14 +48,14 @@
     }
   }
 
-  body{
+  /* body{
     background-color: #212529
-  }
+  } */
 
   h2.cyber{
     margin-top: 1rem;
   }
-
+/* 
   p{
     color: whitesmoke;
     text-align: center;
@@ -63,7 +63,7 @@
 
   label{
     color: white;
-  }
+  } */
   div.preflist{
     height: 20rem;
     overflow-y: scroll;
