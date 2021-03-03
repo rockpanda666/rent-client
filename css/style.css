@@ -49,7 +49,7 @@
   }
 
   body{
-    background-color: #dbdddf
+    background-color: #bed2dd
   }
 
   h2.cyber{
@@ -60,12 +60,7 @@
     text-align: center;
   }
 
-  div.preflist{
-    height: 30rem;
-    overflow-y: scroll;
-    overflow-x: hidden  ;
-  }
-  
+
   .scrollspy-station{
     font-size: 1rem;
     font-weight: 400;
@@ -74,7 +69,37 @@
     text-align: left;
     box-sizing: border-box;
     position: relative;
-    height: 200px;
+    height: 400px;
+    margin-top: .5rem;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+
+  #list-example{
+    box-sizing: border-box;
+    position: relative;
+    height: 400px;
     margin-top: .5rem;
     overflow: auto;
   }
+
+  #list-example>a{
+    font-style: italic;
+  }
+
+  div.preflist{
+    height: 30rem;
+    overflow-y: scroll;
+    overflow-x: hidden  ;
+  }
+
+  .preflist-plan-c{
+    margin: 1rem;
+  }
+
+  div.preflist-plan-c>.mainCheck{
+    font-size: larger;
+    color: rgb(235, 110, 38);
+    font-weight: 600;
+  }
+
