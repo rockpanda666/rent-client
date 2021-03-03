@@ -73,6 +73,7 @@
     margin-top: .5rem;
     overflow: auto;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
   #list-example{
