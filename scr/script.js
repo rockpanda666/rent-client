@@ -17,3 +17,5 @@ $('#collapseExample2').on('show.bs.collapse', function () {
 $('#collapseExample3').on('show.bs.collapse', function () {
     $("div.collapse").collapse("hide")
   })
+
+  
