@@ -40,7 +40,9 @@ function changeClass() {
   if (ww > 560) {
     for (var x = 0; x < $("div.btn-group").length; x++) {
       $("div.btn-group")[x].classList.remove("dropright");
-      $("div.st-btn-container button")[x].removeAttribute("data-offset");
+      var pc_offset = -103.5*x;
+      $("div.st-btn-container button")[x].setAttribute("data-offset",pc_offset.toString()+"%,0");
+
     }
   } else if (ww < 561) {
     for (var x = 0; x < $("div.btn-group").length; x++) {
