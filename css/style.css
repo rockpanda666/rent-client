@@ -120,6 +120,7 @@ st-btn-container {
   height: 100%;
 }
 
+/* 根据屏幕宽度调整dropdown菜单的宽度 */
 @media screen and (max-width: 561px) {
   .sppc-dropmenu {
     height: 400%;
