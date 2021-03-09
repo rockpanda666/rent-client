@@ -106,7 +106,8 @@
   }
 
   st-btn-container{
-    padding: 0%;
+    padding: 5%;
+    position: relative;
   }
 
   /* 扩大车站的点选范围 */
