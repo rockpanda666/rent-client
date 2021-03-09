@@ -1,117 +1,133 @@
 .station-block {
-    overflow: auto;
-    height: 500px;
-    border: 1px solid #2b83e8;
-    width: 400px;
-    position: relative;
+  overflow: auto;
+  height: 500px;
+  border: 1px solid #2b83e8;
+  width: 400px;
+  position: relative;
 
-    z-index: 9999;
-  }
+  z-index: 9999;
+}
 
-  .collapse,div.card{
-    border-color: transparent;
-  }
+.collapse,
+div.card {
+  border-color: transparent;
+}
 
-  div>button{
-      margin: 0.5%;
-  }
-  /* button[aria-controls="collapseExample"]{
+div>button {
+  margin: 0.5%;
+}
+
+/* button[aria-controls="collapseExample"]{
     background-color: yellowgreen;
     color: white;
   } */
- 
-  .cyber {
-    background: linear-gradient(269.16deg, #FFE580 -15.83%, #FF7571 -4.97%, #FF7270 15.69%, #EA5DAD 32.43%, #C2A0FD 50.09%, #9867F0 67.47%, #3BF0E4 84.13%, #33CE43 105.13%, #B2F4B6 123.24%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: fantasy;
-    background-position: 58% 50%;
-    background-size: 500%;
-    animation: gradient-shift 6s ease infinite;
+
+.cyber {
+  background: linear-gradient(269.16deg, #FFE580 -15.83%, #FF7571 -4.97%, #FF7270 15.69%, #EA5DAD 32.43%, #C2A0FD 50.09%, #9867F0 67.47%, #3BF0E4 84.13%, #33CE43 105.13%, #B2F4B6 123.24%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: fantasy;
+  background-position: 58% 50%;
+  background-size: 500%;
+  animation: gradient-shift 6s ease infinite;
 }
-  @keyframes gradient-shift {
-    0% {
-        background-position: 58% 50%
-    }
 
-    25% {
-        background-position: 100% 0%
-    }
-
-    75% {
-        background-position: 10% 50%
-    }
-
-    to {  
-        background-position: 58% 50%
-    }
+@keyframes gradient-shift {
+  0% {
+    background-position: 58% 50%
   }
 
-  body{
-    background-color: #bed2dd
+  25% {
+    background-position: 100% 0%
   }
 
-  h2.cyber{
-    margin-top: 1rem;
+  75% {
+    background-position: 10% 50%
   }
 
-  p{
-    text-align: center;
+  to {
+    background-position: 58% 50%
   }
+}
+
+body {
+  background-color: #bed2dd
+}
+
+h2.cyber {
+  margin-top: 1rem;
+}
+
+p {
+  text-align: center;
+}
 
 
-  .scrollspy-station{
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    box-sizing: border-box;
-    position: relative;
-    height: 400px;
-    margin-top: .5rem;
-    overflow: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
+.scrollspy-station {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+  height: 400px;
+  margin-top: .5rem;
+  overflow: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
 
-  #list-example{
-    box-sizing: border-box;
-    position: relative;
-    height: 400px;
-    margin-top: .5rem;
-    overflow: auto;
-  }
+#list-example {
+  box-sizing: border-box;
+  position: relative;
+  height: 400px;
+  margin-top: .5rem;
+  overflow: auto;
+}
 
-  #list-example>a{
-    font-style: italic;
-  }
+#list-example>a {
+  font-style: italic;
+}
 
-  div.preflist{
-    height: 30rem;
-    overflow-y: scroll;
-    overflow-x: hidden  ;
-  }
+div.preflist {
+  height: 30rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
-  .preflist-plan-c{
-    margin: 1rem;
-  }
+.preflist-plan-c {
+  margin: 1rem;
+}
 
-  div.preflist-plan-c>.mainCheck{
-    font-size: larger;
-    font-style: italic;
-    color: rgb(235, 110, 38);
-    font-weight: 600;
-  }
+div.preflist-plan-c>.mainCheck {
+  font-size: larger;
+  font-style: italic;
+  color: rgb(235, 110, 38);
+  font-weight: 600;
+}
 
-  st-btn-container{
-    padding: 5%;
-    position: relative;
-  }
+st-btn-container {
+  padding: 5%;
+  position: relative;
+}
 
-  /* 扩大车站的点选范围 */
-  .dropdown-item>label, .mainCheck>label{
-    width: 100%;
-    height: 100%;
+/* 扩大车站的点选范围 */
+.dropdown-item>label,
+.mainCheck>label {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 561px) {
+  .sppc-dropmenu {
+    height: 400%;
   }
+}
+@media screen and (min-width: 561px) {
+  .sppc-dropmenu {
+    width: 550px;
+    position: absolute;
+  }
+}
