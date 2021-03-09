@@ -108,3 +108,9 @@
   st-btn-container{
     padding: 0%;
   }
+
+  /* 扩大车站的点选范围 */
+  .dropdown-item>label, .mainCheck>label{
+    width: 100%;
+    height: 100%;
+  }
